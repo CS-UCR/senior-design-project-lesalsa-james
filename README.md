@@ -65,7 +65,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Diagrams
 
 Sequence Diagram
-
+!https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/Gamersonly%20Sequence%20Diagram.jpg
 Frontend Structure
 
 
