@@ -9,11 +9,18 @@
 - [Dependencies](#dependencies)
 
 ## Overview
-<Include project description?
+Basically, we will be creating a web application that allows gamers (the main type of users for this application) to connect. Similar to something like Tinder, but for games and meeting new friends. Our project would have features such as logging in, profiles saved, and categories for people to make friends with similar interests. Some categories we have in mind are games the user plays/is looking to play, wanting to play competitively or casually, and type of music. We would create a “matching” aspect for users based on selections and filter applicants based on that. 
+  Our matching algorithm would be based on the data we retrieve from each user using the Steam API which returns info such as games played and the total hours played on each game. With this data, we plan to create a recommender system to match different players. Of course, different categories will be weighted accordingly; for instance, a player’s games would be weighted more than a user’s other hobbies. As of now, we have slight knowledge of K-nearest-neighbor recommender systems but we aim to research other recommender systems such as collaborative filtering. 
+Then we would have a chatting function for users to connect. Though still subject to change, we are planning to use technologies such as MongoDB, Javascript, HTML, CSS, Node.js, React.js, and Express.js to build our application.
+	Our project is important in allowing users and gamers to be able to connect with each other. We feel that the quality of games is often affected by teammates, and the ability to find teammates before queuing up in a game can overall help benefit the quality of games. In addition, our project will allow people looking for friends or others with similar interests, and be able to connect through the online community.
+
 
 ## Team
-<a href="https://github.com/msalloum" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1790819?s=400&v=4" align="left" height="30px">Mariam Salloum </a>
-
+<a href="https://github.com/achen163" target="_blank">
+  
+<a href="https://github.com/sabroops" target="_blank">
+  
+<a href="https://github.com/steven-nguyen22" target="_blank">
 ## Usage
 Demo: <Link to youtube video>
 
