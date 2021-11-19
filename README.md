@@ -70,7 +70,7 @@ Frontend Structure
 
 
 Overall System Diagram
-![](images/Gamersonly_Sequence_Diagram.drawio.png) 
+![](images/Gamersonly_Sequence_ Diagram.drawio.png) 
 
 ## Dependencies
 Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
