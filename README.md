@@ -65,12 +65,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Diagrams
 
 Sequence Diagram
-![](images/Sequence Diagram.jpg) 
+![Sequence Diagram](images/Sequence Diagram.jpg) 
 Frontend Structure
 
 
 Overall System Diagram
-![](images/Gamersonly Sequence Diagram.jpg) 
+![Overall system Diagram](images/Gamersonly Sequence Diagram.jpg) 
 
 ## Dependencies
 Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
