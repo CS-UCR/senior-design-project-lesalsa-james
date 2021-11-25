@@ -1,0 +1,81 @@
+body {
+    background-color: #274472;
+}
+
+
+.button1 {
+    background-color: #0099ff;
+    border-radius: 15px;
+    border: white;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    float: right;
+    cursor: pointer;
+    
+  }
+
+  .button2 {
+    background-color: #aa80ff;
+    border-radius: 15px;
+    border: white;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    float: right;
+    cursor: pointer;
+    
+  }
+
+  .button3 {
+    background-color: #009900;
+    border-radius: 15px;
+    border: white;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+  }
+
+  .buttons {
+    background-color: #778899;
+    border-radius: 15px;
+    border: white;
+    color: white;
+    padding: 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .buttons:hover {
+      background-color: red;
+      color: white;
+  }
+
+  .buttons:focus{
+      background-color: red;
+  }
+  .custom {
+      font-weight: bold;
+      color: white;
+      font-size: 30px;
+  }
+
+ 
