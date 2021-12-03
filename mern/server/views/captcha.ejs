@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Google Recaptcha in Node.js Tutorial</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="../css/captchastyle.css" rel="stylesheet" type="text/css">
+   
+
+</head>
+
+<header>
+    <img src="../images/GamersLogo.png" id="gamerLogo"/>
+    
+    <ul style="padding-right: 30px;">
+        <li style="float:right"><a class="active" href="/users/register">
+            <button id = "sign-up-button" >Sign Up</button>
+        </a></li>
+        <li style="float:right"><a class="active" href="/users/login">
+            <button id = "login-button">Log In</button>
+        </a></li>
+    </ul>
+</header>
+
+<body>
+    <!-- <img src="../images/GamersLogo.png" id="gamerLogo"/> -->
+
+    <div id = "captcha-title">
+        <h1>Find some gamers, gamer...</h1> 
+    </div>    
+
+    <ul class = "GRPP">
+        <li>
+        <label for="gameList">Choose a Game:</label>
+            <select id="gameList">
+                <option value=""></option>
+                <option value="league">League of Legends</option>
+                <option value="valorant">Valorant</option>
+            </select>
+        </li><br>
+
+        <li>
+            <label for="Rank">Rank:</label>
+                <select id="rankList">
+                    <option value=""></option>
+                    <option value="iron">Iron</option>
+                    <option value="bronze">Bronze</option>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                    <option value="platinum">Platinum</option>
+                    <option value="diamond">Diamond</option>
+                    <option value="immortal">Immortal</option>
+                    <option value="radiant">Radiant</option>
+                </select>
+        </li><br>
+
+        <li>
+            <label for="Playstyle">Playstyle:</label>
+            <select id="playstyle">
+                <option value=""></option>
+                <option value="casual">Casual</option>
+                <option value="competitve">Competitive</option>
+            </select>
+        </li><br>
+        
+           <li>
+            <label for="numPlayers">Number of Players:</label>
+            <select id="numPlayers">
+                <option value=""></option>
+                <option value="one">One</option>
+                <option value="two">Two</option>
+                <option value="three">Three</option>
+                <option value="four">Four</option>
+            </select> 
+        </li>
+    </ul>
+
+    <!-- </ul> -->
+
+    <div style = "text-align: center;">
+        <button class="btn btn-success btn-lg" href="/verify/captcha2">Chat Anonymously</button>
+    </div>
+
+    <!-- <button id="chatAnon">Chat Anonymously</button> -->
+
+    <div class="captcha-container"><br />
+        <form method="POST" action="/captcha">
+            <div class="g-recaptcha" data-sitekey="6LcqmXUdAAAAAEL_S58ghYNHCcmEbbE65wcuyssj"></div>
+            <div id = "button-container">
+                <button id = "captchabutton" class="btn btn-success btn-md">Submit</button>
+            </div>
+            
+        </form>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    </div> 
+
+</body>
+</html>

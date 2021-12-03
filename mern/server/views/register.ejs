@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+    <link href="../public/css/login.css" rel="stylesheet" type="text/css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <!-- <a href="/home">Home</a> -->
+    <h1 id = "login-title">Register</h1>
+
+    <form action="/users/register" method="POST">
+    <div>
+        <input type="text" id="name" name="name" placeholder="Name" required/>
+    </div>
+    <div>
+        <input type="email" id="email" name="email" placeholder="Email" required/>
+    </div>
+    <div>
+        <input type="password" id="password" name="password" placeholder="password" required/>
+    </div>
+    <div>
+        <input type="password" id="password2" name="password2" placeholder="Confirm password" required />
+    </div>
+    <div>
+
+
+        <input type="submit" value="Register" />
+    </div>
+    <a class =  "oauth-container" href="/users/login">Already registered? Login here</a>
+    </form> 
+</body>
+</html>
