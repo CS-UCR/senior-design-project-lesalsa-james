@@ -9,7 +9,7 @@ body {
 }
 
 #captcha-title{
-    padding-top: 10%;
+    padding-top: 6%;
 	margin:auto;
 	width: 50%;
     text-align: center;
@@ -18,14 +18,15 @@ body {
   
 }
 .captcha-container{
-    padding-left: 15%;
-	margin:auto;
+    padding-left: 10%;
+	/* margin:auto; */
 	width: 50%;
 }
 
 #button-container{
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
+    padding-right: 95%;
 }
 
 #captchabutton{
