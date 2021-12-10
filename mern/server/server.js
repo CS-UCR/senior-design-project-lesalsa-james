@@ -12,7 +12,6 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
 });*/
 
-// BIG LITTLE PROJECT
 
 const express = require('express');
 const app = express();
@@ -22,6 +21,12 @@ const session = require('express-session');
 const flash = require('express-flash');
 const passport = require("passport");
 const request = require('request');
+
+const io = require('socket.io')(server)
+
+io.on('connection'), socket => {
+    socket.emit('chat-message', 'Hello')
+}
 
 //links to css file
 

@@ -43,7 +43,7 @@ import {
             you have multiple routes, but you want only one
             of them to render at a time
           */}
-          <Routes>
+          {/* <Routes>
             <Route exact path="/" element = {<Home />} />
             </Route>
             {/* <Route path="/Next">
@@ -51,8 +51,8 @@ import {
             </Route>
             <Route path="/Register">
               <Register />
-            </Route> */}
-          </Routes>
+            </Route>}
+          </Routes> */}
         </div>
       </Router>
     );
@@ -150,4 +150,4 @@ import {
 //     );
 //   }
 
-export default Landing;
+//export default Landing;
