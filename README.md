@@ -16,11 +16,12 @@ Then we would have a chatting function for users to connect. Though still subjec
 
 
 ## Team
-<a href="https://github.com/achen163" target="_blank">
+[Alex Chen](https://github.com/achen163)
   
 <a href="https://github.com/sabroops" target="_blank">
   
 <a href="https://github.com/steven-nguyen22" target="_blank">
+	
 ## Usage
 Demo: <Link to youtube video>
 
