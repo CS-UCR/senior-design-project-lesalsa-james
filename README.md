@@ -17,10 +17,11 @@ Then we would have a chatting function for users to connect. Though still subjec
 
 ## Team
 [Alex Chen](https://github.com/achen163)
+
+[Sabrina Carlos](https://github.com/sabroops)
+
+[Steven Nguyen](https://github.com/steven-nguyen22)
   
-<a href="https://github.com/sabroops" target="_blank">
-  
-<a href="https://github.com/steven-nguyen22" target="_blank">
 	
 ## Usage
 Demo: <Link to youtube video>
