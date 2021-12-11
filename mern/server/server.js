@@ -22,11 +22,11 @@ const flash = require('express-flash');
 const passport = require("passport");
 const request = require('request');
 
-const io = require('socket.io')(server)
+// const io = require('socket.io')(server)
 
-io.on('connection'), socket => {
-    socket.emit('chat-message', 'Hello')
-}
+// io.on('connection'), socket => {
+//     socket.emit('chat-message', 'Hello')
+// }
 
 //links to css file
 
@@ -72,8 +72,8 @@ app.get('/verify/captcha2', (req, res) => {
   res.render('captcha2');
 });
 
-app.get('/users/login', checkAuthenticated, checkCaptchaCompleted, (req, res) => {
-    res.render('login');
+app.get('/users/chat', checkAuthenticated, checkCaptchaCompleted, (req, res) => {
+    res.render('chat');
 });
 
 // app.get('/home', function(req, res) {
@@ -97,7 +97,7 @@ app.post('/captcha', function(req, res) {
         body = JSON.parse(body);
         //console.log(body);
         // if (body.success) {
-            res.redirect('/users/login');
+            res.redirect('/users/chat');
             captcha = true;
         // } else {
         //     return res.json({ "responseError": "Failed captcha verification" });
