@@ -87,6 +87,15 @@ Overall System Diagram
 
 ## Dependencies
 Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
+	
+## Accomplished Tasks
+1. This quarter we mainly focused on planning our project and visualising how it will all come together through our various design documents and diagrams which can be found in our group's folder on Google Drive.
+	
+2. A lot of our planning also consisted of research we had to do on new tools and technologies that we weren't familiar with to implement them in our project. 
+	
+3. Setting up our codebase with all the dependencies and technologies we researched was another task we accomplished before we began coding. 
+	
+4. Coding as a group we were able to setup our homepage, login page, and sign up page. We also made progress on implementing our live chatting feature but there are still a couple bugs we have to work out before it runs smoothly. 
 
 ## Future Plans 
 1. Over the break we plan to finish our live chatting feature which has already been implemented. However, there are still bugs at the time and we need to troubleshoot them before the feature works correctly. 
