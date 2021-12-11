@@ -88,3 +88,13 @@ Overall System Diagram
 ## Dependencies
 Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
 
+## Future Plans 
+1. Over the break we plan to finish our live chatting feature which has already been implemented. However, there are still bugs at the time and we need to troubleshoot them before the feature works correctly. 
+	
+2. We plan to integrate the Steam API to allow us to gather data from individual users and the games they play. We are also looking into using the Riot API for additional data but only if time permits. 
+	
+3. Additionally, we also plan to add the matching and friends feature which allows users to friend other individuals, see their online status, and select match making filters to find other gamers. 
+	
+4. Our recommendation system is another feature that will be added eventually which encompasses the last 3 features. Using the data from the Steam API and matching making filters, we will build a system that connects gamers to other individuals that share similar qualities. 
+	
+5. Testing and deployment will also be a main topic we will focus on towards the end of next quarter. We plan to test everything to make sure that our web application is running smoothly and we are thinking of deploying our application using Heroku. 
