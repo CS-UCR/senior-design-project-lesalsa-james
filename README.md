@@ -64,6 +64,19 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## How to run our project 
+1. Download an IDE (Visual Studio Code)
+
+2. Command line: git clone https://github.com/CS-UCR/senior-design-project-lesalsa-james.git (in IDE terminal) 
+	
+3. Command line: npm install express (installing dependency) 
+	
+4. Command line: cd mern/server
+	
+5. Command line: npm start 
+	
+6. Open web browser, enter url: http://127.0.0.1:8000/
+
 ## Diagrams
 
 Sequence Diagram
