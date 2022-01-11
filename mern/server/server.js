@@ -3,22 +3,21 @@ const mongoose = require("mongoose");
 const { chats } = require("./data/data")
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const userRoutes = require("./routes/userRoutes")
+
+
 const app = express();
 dotenv.config();
 connectDB();
 // console.log(process.env.MONGO_URI);
 
+app.use(express.json());
 app.get("/", (req,res) => {
     res.send("API is running successfully")
 });
 
-app.get("/api/chat", (req,res) => {
-    res.send(chats);
-});
+app.use('/api/user', userRoutes)
 
-app.get("/api/chat/:id", (req,res) => {
-    console.log(req);
-});
 
 const PORT = process.env.PORT || 5000;
 
