@@ -40,7 +40,7 @@ const Login = () => {
                 onClick={submitButton}
                 width="100%"
             >
-                Sign up
+                Login
             </Button>
             <Button
                 colorScheme="green"

@@ -1,5 +1,7 @@
-import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack } from '@chakra-ui/react'
-import React, {useState} from 'react'
+import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack, useToast } from '@chakra-ui/react';
+import {useState} from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -9,7 +11,59 @@ const Signup = () => {
     const [password, setPassword ] = useState();
     const [show, setShow ] = useState(false);
     const clickPressed = () => setShow(!show);
-    const submitButton = () => {};
+    const toast = useToast();
+    const history = useHistory();
+
+    const submitButton = async () => {
+        
+        if (!email || !name || !password || !confirmpassword){
+            toast({
+                title: "Missing a Field",
+                status:"warning",
+                duration: 3000,
+                isClosable: true,
+                position: 'bottom',
+            });
+            return;
+        }
+        if (password !== confirmpassword){
+            toast({
+                title: "Passwords Do Not Match",
+                status: "warning",
+                duration: 3000,
+                isClosable: true,
+                position: 'bottom',
+            });
+            return;
+        }
+        try {
+            const config = {
+                headers: {
+                    "Content-type": "application/json",
+                },
+            };
+
+            const {data} = await axios.post("/api/user",{name, email, password}, config );
+            toast({
+                title: "Sucessfully Registered",
+                status: "success",
+                duration: 3000,
+                isClosable: true,
+                position: "bottom"
+            });
+            localStorage.setItem('userInfo', JSON.stringify(data));
+            history.push('/chats')
+        } catch(error){
+            toast({
+                title: "Error",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+                position: "bottom",
+            });
+        }
+
+    };
     return (
         <VStack spacing='5px'>
             <FormControl id= "first-name" isRequired>
@@ -47,7 +101,7 @@ const Signup = () => {
                     <Input 
                         type= {show ? "text": "password"}
                         placeholder = "Confirm Password"
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => setConfirmpassword(e.target.value)}
                     />
                     <InputRightElement>
                         <Button size = "sm" bg="white" m={3} onClick={clickPressed}>
