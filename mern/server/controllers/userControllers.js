@@ -12,7 +12,7 @@ const registerUser = expressAsyncHandler(async (req,res) => {
         throw new Error ("Enter all the fields");
     }
 
-    const userExists = await User.findOne({email});
+    const userExists = await User.findOne({email}); //Query database
     if (userExists){
         res.status(400);
         throw new Error("Email already in use");
@@ -24,7 +24,7 @@ const registerUser = expressAsyncHandler(async (req,res) => {
         password
     });
     if (user){
-        res.status(201).json({
+        res.status(201).json({ //201 = success
             _id: user._id,
             name: user.name,
             email:user.email,
