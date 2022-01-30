@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import './homeStyles.css'
 import { useHistory } from "react-router-dom";
 import logo from "./GamersLogo.png";
@@ -8,7 +8,8 @@ import logo from "./GamersLogo.png";
 
 
 function Home() {
-        let history = useHistory();
+        let history = useHistory(); 
+
         return (
             <div className='page'>
                 <img src={logo} alt="stuff"/> 

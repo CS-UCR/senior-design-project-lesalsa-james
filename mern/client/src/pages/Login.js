@@ -2,9 +2,21 @@ import React from 'react'
 import {Box, Container, Text, Tab, Tabs, TabList, TabPanel, TabPanels} from "@chakra-ui/react"
 import Login from "../components/authentication/Login"; 
 import Signup from "../components/authentication/Signup"; 
+import { useHistory } from "react-router";
+import { useEffect } from "react";
 
 
-const logIn = () => {
+
+
+const LogIn = () => {
+  
+  const history = useHistory(); // change to const
+
+  useEffect(() => {
+      const user = JSON.parse(localStorage.getItem("userInfo"));
+      if(user) history.push("/chat");
+  }, [history]);
+
     return (
         <Container maxW = "x1" centerContent>
             <Box
@@ -39,4 +51,4 @@ const logIn = () => {
     )
 }
 
-export default logIn
+export default LogIn
