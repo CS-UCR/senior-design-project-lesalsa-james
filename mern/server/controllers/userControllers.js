@@ -68,5 +68,28 @@ const allUsers = expressAsyncHandler(async (req,res) => {
     
 });
 
+const updateUser = expressAsyncHandler(async(req, res) => {
+    const {name, email, password} = req.body;
+    const user = await User.findOne({email});
 
-module.exports={registerUser, authUser, allUsers}
+    if(user) {
+        user.name = name;
+        user.email = email;
+
+        const updatedUser = await user.save();
+
+        res.json({
+            _id: updatedUser._id,
+            name:updatedUser.name,
+            email:updatedUser.email,
+            // token:generateToken(updatedUser._id),
+        });
+    }
+    else {
+        res.status(404)
+        throw new Error("User not found!");
+    }
+});  
+
+
+module.exports={registerUser, authUser, allUsers, updateUser}
