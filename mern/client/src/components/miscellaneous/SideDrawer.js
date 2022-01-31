@@ -17,6 +17,8 @@ const SideDrawer = () => {
   const [loadingChat, setLoadingChat] = useState();
 
   const user = ChatState();
+  // console.log(JSON.parse(localStorage.getItem("userInfo")));
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const history = useHistory();
   const {isOpen, onOpen, onClose} = useDisclosure();
 
@@ -44,12 +46,12 @@ const SideDrawer = () => {
       
       const config = {
         headers: {
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `Bearer ${userInfo.token}`,
         },
       };
      
       // console.log(user.token);
-      const { data } = await axios.get(`/api/user?search=${search}`,config);
+      const { data } = await axios.get(`/api/user?search=${search}`, config);
 
       setLoading(false);
       setSearchResult(data);

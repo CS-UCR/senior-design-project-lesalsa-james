@@ -1,10 +1,11 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const ChatContext = createContext();
 
 const ChatProvider = ({ children }) => {
     const [user, setUser] = useState();
+
 
     const history = useHistory();
 
