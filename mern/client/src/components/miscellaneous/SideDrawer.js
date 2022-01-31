@@ -16,7 +16,7 @@ const SideDrawer = () => {
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState();
 
-  const user = ChatState();
+  const {user} = ChatState();
   // console.log(JSON.parse(localStorage.getItem("userInfo")));
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const history = useHistory();
@@ -46,7 +46,7 @@ const SideDrawer = () => {
       
       const config = {
         headers: {
-          Authorization: `Bearer ${userInfo.token}`,
+          Authorization: `Bearer ${user.token}`,
         },
       };
      
