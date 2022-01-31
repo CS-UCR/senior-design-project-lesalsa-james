@@ -52,7 +52,7 @@ const Signup = () => {
                 position: "bottom"
             });
             localStorage.setItem('userInfo', JSON.stringify(data));
-            history.push('/chats')
+            history.push('/chat')
         } catch(error){
             toast({
                 title: "Error",
