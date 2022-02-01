@@ -3,6 +3,7 @@ import {Tooltip, Menu, MenuButton, MenuList, MenuItem, MenuDivider, Drawer, useD
 import {BellIcon, ChevronDownIcon} from "@chakra-ui/icons";
 import {Button} from "@chakra-ui/button";
 import {Avatar} from "@chakra-ui/avatar";
+import {Spinner} from "@chakra-ui/spinner";
 import React, { useState } from 'react';
 import { ChatState } from "../../context/ChatProvider";
 import { useHistory } from "react-router-dom";
@@ -16,9 +17,9 @@ const SideDrawer = () => {
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState();
 
-  const {user} = ChatState();
+  const {user, setSelectedChat, chats, setChats} = ChatState();
   // console.log(JSON.parse(localStorage.getItem("userInfo")));
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  // const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const history = useHistory();
   const {isOpen, onOpen, onClose} = useDisclosure();
 
@@ -67,8 +68,34 @@ const SideDrawer = () => {
     }
   };
 
-  const accessChat = (userId) => {
+  const accessChat = async (userId) => {
+    try {
+      setLoadingChat(true);
 
+      const config = {
+        headers: {
+          "Content-type":"application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+      const {data} = await axios.post('/api/chat', { userId }, config);
+      if (!chats.find((c) => c._id === data._id)) 
+        setChats([data, ...chats]);
+
+      setSelectedChat(data);
+      setLoadingChat(false);
+      onClose();
+
+    }catch (error){
+      toast({
+        title: "Error Ocurred!",
+        description: "Error fetching chat",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position:"bottom-left",
+      });
+    }
   }
 
   return (
@@ -124,6 +151,7 @@ const SideDrawer = () => {
             />
           ))
         )}
+        {loadingChat && <Spinner ml = "auto" d="flex" />}
       </DrawerBody>
     </DrawerContent>
   </Drawer>
