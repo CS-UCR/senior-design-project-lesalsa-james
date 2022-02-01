@@ -5,10 +5,11 @@ import axios from 'axios';
 import { AddIcon } from '@chakra-ui/icons';
 import { getSender } from '../config/ChatLogics';
 import ChatLoading from './ChatLoading';
+import GroupChatPopup from './miscellaneous/GroupChatPopup';
 
-const MyChats = () => {
+const MyChats = ({fetchAgain}) => {
   const [loggedUser, setloggedUser] = useState()
-  const { selectedChat, setselectedChat, user, chats, setChats} = ChatState();
+  const { selectedChat, setSelectedChat, user, chats, setChats} = ChatState();
   const toast = useToast();
 
   const fetchChats = async () => {
@@ -36,7 +37,7 @@ const MyChats = () => {
   useEffect(() => {
     setloggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
-  }, []  );
+  }, [fetchAgain]  );
 
   return (
     <Box
@@ -60,13 +61,15 @@ const MyChats = () => {
         alignItems="center"
       >
         My Chats
-        <Button
+        <GroupChatPopup>
+          <Button
             d="flex"
             fontSize={{ base: "17px", md: "10px", lg: "17px" }}
             rightIcon={<AddIcon />}
           >
             New Group Chat
           </Button>
+        </GroupChatPopup>
       </Box>
       <Box
         d="flex"
@@ -82,9 +85,9 @@ const MyChats = () => {
           <Stack overflowY="scroll">
             {chats.map((chat) => (
               <Box
-                onClick={() => setselectedChat(chat)}
+                onClick={() => setSelectedChat(chat)}
                 cursor="pointer"
-                bg={selectedChat === chat ? "#38B2AC" : "#E8E8E8"}
+                bg={selectedChat === chat ? "#9370db" : "#E8E8E8"}
                 color={selectedChat === chat ? "white" : "black"}
                 px={3}
                 py={2}
@@ -92,9 +95,9 @@ const MyChats = () => {
                 key={chat._id}
               >
                 <Text>
-                  {/* {!chat.isGroupChat
+                  {!chat.isGroupChat
                     ? getSender(loggedUser, chat.users)
-                    : chat.chatName} */}
+                    : chat.chatName} 
                 </Text>
               </Box>
             ))}

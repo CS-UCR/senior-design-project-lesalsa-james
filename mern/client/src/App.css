@@ -6,3 +6,15 @@
     background-image: url(./images/CSBG_LOL.jpg);
 
 }
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #555
+}
