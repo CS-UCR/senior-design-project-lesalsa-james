@@ -34,13 +34,22 @@ Demo: <Link to youtube video>
 
 2. Command line: git clone https://github.com/CS-UCR/senior-design-project-lesalsa-james.git (in IDE terminal) 
 	
-3. Command line: npm install express (installing dependency) 
+3. Command line: cd mern/server
 	
-4. Command line: cd mern/server
+4. Command line: npm install (installing dependency) 
 	
-5. Command line: npm start 
+5. Make a .env file with the contents:
+ 
+	PORT=5000
+	MONGO_URI=mongodb+srv://gamersonly:lesalsajames@cluster0.iirer.mongodb.net/Gamersonly?retryWrites=true&w=majority
+	JWT_SECRET = lesalsajames
 	
-6. Open web browser, enter url: http://127.0.0.1:8000/
+6. Command line: cd mern/client (in a new terminal)
+	
+7. Command line: npm install
+	
+8. Command line: npm start 
+	
 
 ## Diagrams
 
