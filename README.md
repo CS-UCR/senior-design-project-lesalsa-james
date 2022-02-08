@@ -72,6 +72,8 @@ Current Edit Profile Page
 ![Edit Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/edit%20profile%20page.PNG)
 Current Chat Page 
 ![Chat Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/chat%20page.PNG)
+Current Sign-Up/Login Page
+![Sign up Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/sign%20up%20page.PNG)
 
 
 Overall System Diagram
