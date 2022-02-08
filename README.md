@@ -66,6 +66,8 @@ Mocked up Profile
 ![Profile page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/LeSalsa%20Gamers_Profile_v1.png)
 Mocked up Chat Page
 ![Chat Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/LeSalsa%20Gamers_Chat.png)
+Current Home Page
+![Home Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/homepage.PNG)
 
 
 Overall System Diagram
