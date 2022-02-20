@@ -1,11 +1,18 @@
-import { Box, Text } from '@chakra-ui/react';
-import React from 'react';
+import { Box, FormControl, Spinner, Text, Input } from '@chakra-ui/react';
+import React, {useState} from 'react';
 import { getSender } from '../config/ChatLogics';
 import { ChatState } from '../context/ChatProvider';
 import UpdatedGroupChatPopup from './miscellaneous/UpdatedGroupChatPopup';
 
 const SingleChat = ({fetchAgain, setFetchAgain }) => {
   
+ const [messages, setMessage] = useState([]);
+ const [loading, setLoading] = useState(false);
+ const [newMessage, setNewMessage] = useState();
+
+ const sendMessage = () => {}
+ const typingHandler = () => {}
+
  const{ user, selectedChat, setSelectedChat } = ChatState();
   return <>
       {selectedChat ? (
@@ -25,11 +32,25 @@ const SingleChat = ({fetchAgain, setFetchAgain }) => {
 
           </Text>
           <Box d= "flex" flexDir = "column" justifycontent="flex-end" ps={3} bg="#E8E8E8" h= "100%" w="100%" borderRadius = "lg" overflowY= "hidden">
-              {/* Messages  */}
+          {!loading ? 
+                  <Spinner w={20} h={20} alignSelf="center" margin= "auto"/> : (
+                  <div>
+                   {/* Messages */}      
+                  </div>
+                  )}
+                  <FormControl onKeyDown={sendMessage} isRequired mt= {3}>
+                    <Input 
+                        variant = "filled"
+                        bg="white"
+                        placeholder="Type a message..."
+                        onChange = {typingHandler}
+                        value = {newMessage}
+                    /> 
+                  </FormControl>
           </Box>
           </>
       ) : (
-        <Box d="flex" alignItems = "center" justifyContent= "center" h = "100%">
+        <Box d="flex" alignItems = "center" justifyContent= "center" h= "100%">
             <Text fontSize = "20px" pb = {3} >
                 Select a chat
             </Text>
