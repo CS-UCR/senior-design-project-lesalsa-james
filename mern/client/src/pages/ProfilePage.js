@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { useToast, Button, FormControl, FormLabel, Input, Container, Flex, VStack, Heading, Text, SimpleGrid, GridItem, Grid } from '@chakra-ui/react';
+import { useToast, Button, FormControl, FormLabel, Input, Container, Flex, VStack, Heading, Text, SimpleGrid, GridItem, Grid, Select } from '@chakra-ui/react';
 import axios from 'axios';
 
 
@@ -10,6 +10,10 @@ const ProfilePage = () => {
     const [email, setEmail ] = useState();
     const [password, setPassword ] = useState();
     const [confirmPassword, setConfirmpassword ] = useState();
+    const [game, setGame ] = useState();
+    const [rank, setRank ] = useState();
+    const [playstyle, setPlaystyle ] = useState();
+    const [numPlayers, setNumPlayers ] = useState();
     const toast = useToast();
 
     const updateUser = async () => {
@@ -40,7 +44,7 @@ const ProfilePage = () => {
                 },
             };
 
-            const {data} = await axios.post("/api/user/update",{name, email, password}, config );
+            const {data} = await axios.post("/api/user/update",{name, email, password, game, rank, playstyle, numPlayers}, config );
             toast({
                 title: "Sucessfully Updated",
                 status: "success",
@@ -51,7 +55,7 @@ const ProfilePage = () => {
             localStorage.setItem('userInfo', JSON.stringify(data));
 
             // event.preventDefault();
-            console.log(name, email, password, confirmPassword);
+            console.log(name, email, password, confirmPassword, game, rank, playstyle, numPlayers);
         } catch (error) {
             toast({
                 title: "Error",
@@ -69,7 +73,7 @@ const ProfilePage = () => {
             <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start" bg="white">
                 <VStack spacing={3} alignItems="flex-start">
                     <Heading size="2xl">Edit Profile</Heading>
-                    <Text>Your info here</Text>
+                    {/* <Text>Hello...</Text> */}
                 </VStack>
 
                 <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
@@ -119,6 +123,56 @@ const ProfilePage = () => {
                             id="confirmPassword" 
                             placeholder="Re-Enter Password"
                         />
+                    </FormControl>
+                </GridItem>
+                <GridItem colSpan={2}>
+                    <FormControl>
+                        <FormLabel>Preferences</FormLabel>
+                        <Select
+                            bg='#81E6D9'
+                            borderColor='#81E6D9'
+                            color='black'
+                            placeholder='Select Game: '
+                            onChange={(e) => setGame(e.target.value)}
+                        >
+                        <option value='Valorant'>Valorant</option>
+                        <option value='Leagoe of Legends'>League of Legends</option>
+                        </Select>
+                        <Select
+                            bg= '#4FD1C5'
+                            borderColor='#4FD1C5'
+                            color='black'
+                            placeholder='Select Rank: '
+                            onChange={(e) => setRank(e.target.value)}
+                        >
+                        <option value='Bronze'>Bronze</option>
+                        <option value='Silver'>Silver</option>
+                        <option value='Gold'>Gold</option>
+                        <option value='Platinum'>Platinum</option>
+                        <option value='Diamond'>Diamond</option>
+                        </Select>
+                        <Select
+                            bg='#38B2AC'
+                            borderColor='#38B2AC'
+                            color='black'
+                            placeholder='Select Playstyle: '
+                            onChange={(e) => setPlaystyle(e.target.value)}
+                        >
+                        <option value='Casual'>Casual</option>
+                        <option value='Competitive'>Competitive</option>
+                        </Select>
+                        <Select
+                            bg='#319795'
+                            borderColor='#319795'
+                            color='black'
+                            placeholder='Select Number Of Players: '
+                            onChange={(e) => setNumPlayers(e.target.value)}
+                        >
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                        </Select>
                     </FormControl>
                 </GridItem>
                 <GridItem colSpan={2}>

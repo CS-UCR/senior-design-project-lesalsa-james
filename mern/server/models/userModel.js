@@ -5,6 +5,10 @@ const userSchema = mongoose.Schema({
     name:{type:String, required:true},
     email:{type:String, required:true, unique:true},
     password:{type:String, required:true},
+    game:{type:String, required:false},
+    rank:{type:String, required:false},
+    playstyle:{type:String, required:false},
+    numPlayers:{type:String, required:false},
     //pic: {type:}
 },
 
