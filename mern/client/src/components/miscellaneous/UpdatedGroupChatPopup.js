@@ -7,7 +7,7 @@ import UserBadgeItem from '../UserAvatar/UserBadgeItem';
 import UserListItem from '../UserAvatar/UserListItem';
 
 
-const UpdatedGroupChatPopup = ({fetchAgain, setFetchAgain }) => {
+const UpdatedGroupChatPopup = ({fetchAgain, setFetchAgain, fetchMessages }) => {
     
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [groupChatName, setGroupChatName] = useState();
@@ -47,6 +47,7 @@ const UpdatedGroupChatPopup = ({fetchAgain, setFetchAgain }) => {
             );
             removeduser._id === user._id ? setSelectedChat() : setSelectedChat(data);
             setFetchAgain(!fetchAgain);
+            fetchMessages();
             setLoading(false);
         } catch(error) {
             toast({
