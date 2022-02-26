@@ -69,12 +69,18 @@ const allUsers = expressAsyncHandler(async (req,res) => {
 });
 
 const updateUser = expressAsyncHandler(async(req, res) => {
-    const {name, email, password} = req.body;
+    const {name, email, password, game, rank, playstyle, numPlayers} = req.body;
     const user = await User.findOne({email});
+    // const user = await User.findById(req.user._id);
 
     if(user) {
         user.name = name;
         user.email = email;
+        user.password = password;
+        user.game = game;
+        user.rank = rank;
+        user.playstyle = playstyle;
+        user.numPlayers = numPlayers;
 
         const updatedUser = await user.save();
 
@@ -82,7 +88,12 @@ const updateUser = expressAsyncHandler(async(req, res) => {
             _id: updatedUser._id,
             name:updatedUser.name,
             email:updatedUser.email,
-            // token:generateToken(updatedUser._id),
+            password:updatedUser.password,
+            game:updatedUser.game,
+            rank:updatedUser.rank,
+            playstle:updatedUser.playstle,
+            numPlayers:updatedUser.numPlayers,
+            token:generateToken(updatedUser._id),
         });
     }
     else {

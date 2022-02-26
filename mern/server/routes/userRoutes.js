@@ -9,6 +9,7 @@ const router = express.Router()
 router.route('/').post(registerUser).get(protect, allUsers);
 router.post('/login', authUser);
 router.post('/update', updateUser);
+// router.route('/update').post(protect,updateUser);
 
 
 

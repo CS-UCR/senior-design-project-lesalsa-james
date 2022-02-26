@@ -9,9 +9,8 @@
 - [Dependencies](#dependencies)
 
 ## Overview
-Basically, we will be creating a web application that allows gamers (the main type of users for this application) to connect. Similar to something like Tinder, but for games and meeting new friends. Our project would have features such as logging in, profiles saved, and categories for people to make friends with similar interests. Some categories we have in mind are games the user plays/is looking to play, wanting to play competitively or casually, and type of music. We would create a “matching” aspect for users based on selections and filter applicants based on that. 
-  Our matching algorithm would be based on the data we retrieve from each user using the Steam API which returns info such as games played and the total hours played on each game. With this data, we plan to create a recommender system to match different players. Of course, different categories will be weighted accordingly; for instance, a player’s games would be weighted more than a user’s other hobbies. As of now, we have slight knowledge of K-nearest-neighbor recommender systems but we aim to research other recommender systems such as collaborative filtering. 
-Then we would have a chatting function for users to connect. Though still subject to change, we are planning to use technologies such as Javascript, HTML, CSS, Node.js, React.js, and Express.js to build our application. We currently are using EJS, and PSQL for our database. However we do plan on switching over to MongoDB.
+Basically, we will be creating a web application that allows gamers (the main type of users for this application) to connect. Similar to something like Tinder, but for games and meeting new friends. Our project would have features such as logging in, profiles saved, and categories for people to add friends with similar interests and chat. Some categories we have in mind are games the user plays/is looking to play, wanting to play competitively or casually, and type of music. We would create a "filtering" aspect for users based on selections and filter applicants based on that. Then we would have a chatting function for users to connect, allowing them to chat normally or also live chat. 
+Though still subject to change, we are currently using technologies such as Javascript, HTML, CSS, Node.js, React.js, and Express.js to build our application. For our frontend, we are also using Chakra UI, a React Component to help us style our webpages. Last quarter we were using PSQL but have made the switch over to MongoDB this quarter.
 	Our project is important in allowing users and gamers to be able to connect with each other. We feel that the quality of games is often affected by teammates, and the ability to find teammates before queuing up in a game can overall help benefit the quality of games. In addition, our project will allow people looking for friends or others with similar interests, and be able to connect through the online community.
 
 
@@ -34,13 +33,22 @@ Demo: <Link to youtube video>
 
 2. Command line: git clone https://github.com/CS-UCR/senior-design-project-lesalsa-james.git (in IDE terminal) 
 	
-3. Command line: npm install express (installing dependency) 
+3. Command line: cd mern/server
 	
-4. Command line: cd mern/server
+4. Command line: npm install (installing dependency) 
 	
-5. Command line: npm start 
+5. Make a .env file with the contents:
+ 
+	PORT=5000
+	MONGO_URI=mongodb+srv://gamersonly:lesalsajames@cluster0.iirer.mongodb.net/Gamersonly?retryWrites=true&w=majority
+	JWT_SECRET = lesalsajames
 	
-6. Open web browser, enter url: http://127.0.0.1:8000/
+6. Command line: cd mern/client (in a new terminal)
+	
+7. Command line: npm install
+	
+8. Command line: npm start 
+	
 
 ## Diagrams
 
@@ -48,16 +56,24 @@ Sequence Diagram
 ![Sequence Diagram](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/Gamersonly%20Sequence%20Diagram.jpg) 
 Frontend Structure
 	
-Home Page
+Mocked Up Home Page
 ![Home Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/LeSalsa%20Gamers_Home.png)
-Loading/Buffering page
+Mocked Up Loading/Buffering page
 ![Buffering page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/LeSalsa%20Gamers_Loading.png)
-Login
+Mocked up Login
 ![Login Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/LeSalsa%20Gamers_Login.png)
-Profile
+Mocked up Profile
 ![Profile page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/LeSalsa%20Gamers_Profile_v1.png)
-Chat Page
+Mocked up Chat Page
 ![Chat Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/LeSalsa%20Gamers_Chat.png)
+Current Home Page
+![Home Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/homepage.PNG)
+Current Edit Profile Page
+![Edit Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/edit%20profile%20page.PNG)
+Current Chat Page 
+![Chat Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/chat%20page.PNG)
+Current Sign-Up/Login Page
+![Sign up Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/sign%20up%20page.PNG)
 
 
 Overall System Diagram
@@ -73,13 +89,17 @@ Overall System Diagram
 	
 4. Coding as a group we were able to setup our homepage, login page, and sign up page. We also made progress on implementing our live chatting feature but there are still a couple bugs we have to work out before it runs smoothly. 
 
+5. We implemented React to our homepage and login/signup page.
+	
+6. Have our Edit Profile Page working.
+
+7. Worked on Creating a Chat, and Creating a Group Chat.
+
 ## Future Plans 
-1. Over the break we plan to finish our live chatting feature which has already been implemented. However, there are still bugs at the time and we need to troubleshoot them before the feature works correctly. 
+1. Currently finishing up our connection of backend and frontend for our chatting.
 	
-2. We plan to integrate the Steam API to allow us to gather data from individual users and the games they play. We are also looking into using the Riot API for additional data but only if time permits. 
+2. We will be working on allowing users to edit other parts of their profile as well. 
 	
-3. Additionally, we also plan to add the matching and friends feature which allows users to friend other individuals, see their online status, and select match making filters to find other gamers. 
+3. Additionally, we also plan to add the filtering and friends feature which allows users to friend other individuals and chat with those friended individuals.
 	
-4. Our recommendation system is another feature that will be added eventually which encompasses the last 3 features. Using the data from the Steam API and matching making filters, we will build a system that connects gamers to other individuals that share similar qualities. 
-	
-5. Testing and deployment will also be a main topic we will focus on towards the end of next quarter. We plan to test everything to make sure that our web application is running smoothly and we are thinking of deploying our application using Heroku. 
+5. Testing and deployment will also be a focus on towards the end of the quarter. We plan to test everything to make sure that our web application is running smoothly and we are thinking of deploying our application using Heroku. 
