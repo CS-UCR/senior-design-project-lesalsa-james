@@ -3,36 +3,39 @@ import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { getSender } from '../config/ChatLogics';
 import { ChatState } from '../context/ChatProvider';
-import ScrollableChat from '../components/ScrollableChat';
+import ScrollableChat from './ScrollableChat';
 import UpdatedGroupChatPopup from './miscellaneous/UpdatedGroupChatPopup';
-import './styles.css'
 
-const SingleChat = ({fetchAgain, setFetchAgain }) => {
-  
+
+const SingleChat = ({ fetchAgain, setFetchAgain }) => {
  const [messages, setMessages] = useState([]);
  const [loading, setLoading] = useState(false);
  const [newMessage, setNewMessage] = useState();
-
+ const{ user, selectedChat, setSelectedChat } = ChatState();
  const toast = useToast();
  
- const fetchMessages = async (event) => {
-  //if not selected chat do nothing 
-  if (!selectedChat) {
-     return;
-   }
-   try {
+ const fetchMessages = async () => {
+
+  if (!selectedChat) return;
+
+  try {
     const config = {
       headers: {
-        Authorization:`Bearer ${user.token}`,
+        Authorization: `Bearer ${user.token}`,
       },
     };
 
     setLoading(true);
 
-    const {data} = await axios.get(`/api/message/${selectedChat._id}`, config);
+    const { data } = await axios.get(
+      `/api/message/${selectedChat._id}`,
+      config
+    );
+
     console.log(messages);
     setMessages(data);
     setLoading(false);
+
 
    } catch(error) {
     toast({
@@ -45,10 +48,10 @@ const SingleChat = ({fetchAgain, setFetchAgain }) => {
     });
    }
  };
- const{ user, selectedChat, setSelectedChat } = ChatState();
- useEffect( () => {
-   fetchMessages();
- }, [selectedChat]);
+
+ useEffect(() => {
+  fetchMessages();
+}, [selectedChat]);
  
  const sendMessage = async (event) => {
    if (event.key === "Enter" && newMessage) {
@@ -82,7 +85,10 @@ const SingleChat = ({fetchAgain, setFetchAgain }) => {
         });
       }
    }
- }
+ };
+
+
+
  const typingHandler = (e) => {
    setNewMessage(e.target.value);
    //Typing Logic
@@ -106,11 +112,12 @@ const SingleChat = ({fetchAgain, setFetchAgain }) => {
             )}
 
           </Text>
-          <Box d= "flex" flexDir = "column" justifycontent="flex-end" ps={3} bg="#E8E8E8" h= "100%" w="100%" borderRadius = "lg" overflowY= "hidden">
-          {!loading ? 
-                  <Spinner w={20} h={20} alignSelf="center" margin= "auto"/> : (
-                  <div className="messages">
-                   <ScrollableChat messages = {messages}/>     
+          <Box d="flex" flexDir="column" justifyContent="flex-end" p={3} bg="#E8E8E8" h= "100%" w="100%" borderRadius = "lg" overflowY= "hidden">
+          {loading ? (
+                  <Spinner w={20} h={20} alignSelf="center" margin= "auto"/> 
+                  ) : (
+                  <div style={{ display: "flex", flexDirection: "column", overflowY: "scroll"}}>
+                   <ScrollableChat messages = {messages} />     
                   </div>
                   )}
                   <FormControl onKeyDown={sendMessage} isRequired mt= {3}>

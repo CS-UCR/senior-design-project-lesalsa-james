@@ -7,7 +7,7 @@ import { getSender } from '../config/ChatLogics';
 import ChatLoading from './ChatLoading';
 import GroupChatPopup from './miscellaneous/GroupChatPopup';
 
-const MyChats = ({fetchAgain}) => {
+const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setloggedUser] = useState()
   const { selectedChat, setSelectedChat, user, chats, setChats} = ChatState();
   const toast = useToast();
@@ -20,7 +20,7 @@ const MyChats = ({fetchAgain}) => {
         },
       };
       const {data} = await axios.get("/api/chat", config);
-      console.log(data);
+      // console.log(data);
       setChats(data);
     } catch (error) {
       toast({
@@ -37,7 +37,7 @@ const MyChats = ({fetchAgain}) => {
   useEffect(() => {
     setloggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
-  }, [fetchAgain]  );
+  }, [fetchAgain]);
 
   return (
     <Box
