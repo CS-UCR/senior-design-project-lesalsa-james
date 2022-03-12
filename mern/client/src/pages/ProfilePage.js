@@ -16,6 +16,8 @@ const ProfilePage = () => {
     const [numPlayers, setNumPlayers ] = useState();
     const toast = useToast();
 
+    const [testVal, setTest ] = useState();
+
     const updateUser = async () => {
         if (!email || !name || !password || !confirmPassword){
             toast({
@@ -65,6 +67,10 @@ const ProfilePage = () => {
                 position: "bottom",
             });
         }
+    }
+
+    const searchTest = async () => {
+        console.log(testVal);
     }
 
     return (
@@ -189,9 +195,37 @@ const ProfilePage = () => {
             </SimpleGrid>
             </VStack>
             
-            <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start" bg="gray.50">
 
+
+            <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start" bg="gray.50">
+                <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
+                    <GridItem colSpan={2}>
+                        <FormControl>
+                            <FormLabel>Test</FormLabel>
+                            <Input 
+                                onChange={(e) => setTest(e.target.value)} 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                placeholder="John Doe" 
+                            />
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Button 
+                        onClick={searchTest} 
+                        size="lg" 
+                        w="full" 
+                        variant="solid" 
+                        colorScheme="green"
+                        >
+                            Test 
+                        </Button>
+                </GridItem>
+                </SimpleGrid>
             </VStack>
+
+            
         </Flex>
     </Container>
     );

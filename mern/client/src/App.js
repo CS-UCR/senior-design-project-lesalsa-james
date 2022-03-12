@@ -4,6 +4,7 @@ import LogIn from './pages/Login';
 import chat from './pages/Chat';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage'
+import FilterPage from './pages/FilterPage'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path = "/chat" component={chat}/>
       <Route path = "/logIn" component={LogIn}/>
       <Route path = "/ProfilePage" component={ProfilePage}/>
+      <Route path = "/FilterPage" component={FilterPage}/>
       
     </div>
   );

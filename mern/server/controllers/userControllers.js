@@ -102,5 +102,16 @@ const updateUser = expressAsyncHandler(async(req, res) => {
     }
 });  
 
+const getAllUsers = expressAsyncHandler(async(req, res) => {
+    // res.send("get all users route");
+    const users = await User.find({numPlayers: {$lte: 5}});
 
-module.exports={registerUser, authUser, allUsers, updateUser}
+    res.status(200).json({
+        success: true,
+        data: users,
+        // token:generateToken(users._id),
+    });
+});
+
+
+module.exports={registerUser, authUser, allUsers, updateUser, getAllUsers}
