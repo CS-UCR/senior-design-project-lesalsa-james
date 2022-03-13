@@ -14,254 +14,21 @@
 }
 
 .primary:hover {
-    background: red; 
+    background: #B2D6C0; 
 }
 
 .title {
-    position: absolute;
-    width: 663px;
-    height: 72px;
-    left: 152px;
-    top: 261px;
+width: 100%;
+height: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 48px;
+    font-family: Arial;
+    font-weight: 1000;
+    font-size: 88px;
     line-height: 72px;
     color: white;
-}
-
-.game {
-    position: absolute;
-width: 162px;
-height: 72px;
-left: 170px;
-top: 392px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 48px;
-line-height: 72px;
-color: white;
-}
-
-.rank {
-    position: absolute;
-width: 136px;
-height: 72px;
-left: 170px;
-top: 476px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 48px;
-line-height: 72px;
-color: white;
-}
-
-.playstyle {
-    position: absolute;
-width: 234px;
-height: 72px;
-left: 170px;
-top: 560px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 48px;
-line-height: 72px;
-color: white;
-}
-
-.numplayers {
-    position: absolute;
-width: 246px;
-height: 72px;
-left: 170px;
-top: 644px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 48px;
-line-height: 72px;
-color: white;
-}
-
-.chat {
-    position: absolute;
-width: 269px;
-height: 83px;
-left: 184px;
-top: 802px;
-
-/* background: rgba(66, 255, 0, 0.4); */
-background: rgba(66, 255, 0, 0.4);
-border: 2px solid rgba(66, 255, 0, 0.4);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
-}
-
-.val {
-    position: absolute;
-width: 143px;
-height: 63px;
-left: 364px;
-top: 397px;
-
-/* background: rgba(255, 0, 0, 0.51); */
-/* border: 2px solid rgba(255, 0, 0, 0.51); */
-background: #899499;
-border: 2px solid #71797E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
-}
-
-.val:hover {
-    background: red;
-}
-
-.val:focus {
-    background: red;
-}
-
-.league {
-    position: absolute;
-width: 143px;
-height: 63px;
-left: 539px;
-top: 397px;
-
-/* background: rgba(255, 255, 255, 0.15); */
-/* background: red;
-border: 2px solid rgba(255, 255, 255, 0.33); */
-background: #899499;
-border: 2px solid #71797E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
-}
-
-.league:hover {
-    background: red;
-}
-
-.bronze {
-    position: absolute;
-width: 98px;
-height: 63px;
-left: 337px;
-top: 485px;
-
-/* background: rgba(255, 255, 255, 0.15);
-border: 2px solid rgba(255, 255, 255, 0.33); */
-background: #899499;
-border: 2px solid #71797E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
-}
-
-.silver {
-    position: absolute;
-    width: 98px;
-    height: 63px;
-    left: 456px;
-    top: 485px;
-    
-    /* background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.33); */
-    background: #899499;
-border: 2px solid #71797E;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    color: white;
-}
-
-.gold {
-    position: absolute;
-    width: 98px;
-    height: 63px;
-    left: 575px;
-    top: 485px;
-    
-    /* background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.33); */
-    background: #899499;
-border: 2px solid #71797E;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    color: white;
-}
-
-.plat {
-    position: absolute;
-width: 98px;
-height: 63px;
-left: 694px;
-top: 485px;
-
-/* background: rgba(255, 255, 255, 0.15);
-border: 2px solid rgba(255, 255, 255, 0.33); */
-background: #899499;
-border: 2px solid #71797E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
-}
-
-.diamond {
-    position: absolute;
-width: 98px;
-height: 63px;
-left: 815px;
-top: 485px;
-
-/* background: rgba(255, 255, 255, 0.15);
-border: 2px solid rgba(255, 255, 255, 0.33); */
-background: #899499;
-border: 2px solid #71797E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
-}
-
-.casual {
-    position: absolute;
-width: 98px;
-height: 63px;
-left: 435px;
-top: 569px;
-
-/* background: rgba(255, 255, 255, 0.15);
-border: 2px solid rgba(255, 255, 255, 0.33); */
-background: #899499;
-border: 2px solid #71797E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
-}
-
-.competitive {
-    position: absolute;
-width: 98px;
-height: 63px;
-left: 564px;
-top: 569px;
-
-/* background: rgba(255, 255, 255, 0.15);
-border: 2px solid rgba(255, 255, 255, 0.33); */
-background: #899499;
-border: 2px solid #71797E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
 }
 
 .enter {
@@ -289,10 +56,10 @@ background-image: url(../images/CSBG_LOL.jpg);
 }
 
 button:hover {
-    background: red;
+    background: #B2D6C0;
     cursor: pointer;
 }
 
 button:focus {
-    background: red;
+    background: #B2D6C0;
 }
