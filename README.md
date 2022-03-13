@@ -43,11 +43,13 @@ Demo: <Link to youtube video>
 	MONGO_URI=mongodb+srv://gamersonly:lesalsajames@cluster0.iirer.mongodb.net/Gamersonly?retryWrites=true&w=majority
 	JWT_SECRET = lesalsajames
 	
-6. Command line: cd mern/client (in a new terminal)
+6. Start the backend: npm start
 	
-7. Command line: npm install
+7. Command line: cd mern/client (in a new terminal)
 	
-8. Command line: npm start 
+8. Command line: npm install
+	
+9. Command line: npm start 
 	
 
 ## Diagrams
