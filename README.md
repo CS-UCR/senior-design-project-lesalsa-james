@@ -49,7 +49,9 @@ Demo: <Link to youtube video>
 	
 8. Command line: npm install
 	
-9. Command line: npm start 
+9. npm install @material-ui/core @mui/icons-material
+	
+10. Command line: npm start 
 	
 
 ## Diagrams
