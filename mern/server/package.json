@@ -27,6 +27,7 @@
     "passport-local": "^1.0.0",
     "pg": "^8.7.1",
     "postgresql": "0.0.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "socket.io": "^4.4.1"
   }
 }

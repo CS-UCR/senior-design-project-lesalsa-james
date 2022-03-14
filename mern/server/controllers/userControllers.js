@@ -102,5 +102,24 @@ const updateUser = expressAsyncHandler(async(req, res) => {
     }
 });  
 
+const getAllUsers = expressAsyncHandler(async(req, res) => {
+    // res.send("get all users route");
+    let query;
+ 
+    const reqQuery = { ...req.query };
 
-module.exports={registerUser, authUser, allUsers, updateUser}
+    const removeFields = ["numPlayers"];
+
+    let queryStr = JSON.stringify(reqQuery);
+
+    const users = await User.find(JSON.parse(queryStr));
+    // const users = await User.find({game: "Valorant"});
+
+    res.status(200).json({
+        success: true,
+        data: users,
+        // token:generateToken(users._id),
+    });
+});
+
+module.exports={registerUser, authUser, allUsers, updateUser, getAllUsers}
