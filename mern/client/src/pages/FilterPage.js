@@ -146,10 +146,18 @@ const FilterPage = () => {
         // <div>
         
         // </div>
+        
         <Container className={classes.root}>
+            
             <Navbar/>
+
             <Paper className={classes.paper}>
+            <Button size = 'lg' colorScheme='blue' onClick={() => {history.push('/login')}}>
+        Back 
+        </Button> 
+    
                 <Grid container>
+                    
                     <Grid item xs={12} sm={6}>
                         <Typography gutterBottom >Sort By</Typography>
 
