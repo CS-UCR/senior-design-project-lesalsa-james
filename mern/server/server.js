@@ -29,4 +29,52 @@ app.use(notFound);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(5000, console.log(`Server on PORT ${PORT}`));
+const server = app.listen(5000, console.log(`Server on PORT ${PORT}`));
+
+const io = require('socket.io')(server, {
+    pingTimeout: 60000,
+    cors: {
+        origin: "http://localhost:3000"
+    }
+});
+
+io.on("connection", (socket) => {
+    console.log('successfully connected to socket.io');
+    //this part is so that each user has their own socket
+    socket.on('setup', (userData) => {
+        socket.join(userData._id); //create room for user
+        // console.log(userData._id);
+        socket.emit('connected');
+    });
+
+    socket.on('join chat', (room) => {
+        socket.join(room);
+        console.log("User Joined Room: " + room);
+    });
+
+    socket.on("typing", (room) => socket.in(room).emit("typing"));
+
+    socket.on("stop typing", (room) => socket.in(room).emit("stop typing"));
+
+
+    socket.on('new message', (newMessageReceived) => {
+        var chat = newMessageReceived.chat;
+
+        if (!chat.users) {
+            return console.log('no users');
+        }
+        chat.users.forEach(user => {
+            if (user._id == newMessageReceived.sender._id) {
+                return;
+            }
+            //inside that user's room, send message
+            socket.in(user._id).emit("message received", newMessageReceived)
+        })
+    })
+
+    //disconnecting socket to save bandwidth
+    socket.off("setup", () => {
+        console.log("User Disconnected");
+        socket.leave(userData._id);
+    });
+});
