@@ -99,7 +99,7 @@ const Login = () => {
             >
                 Login
             </Button>
-            <Button
+            {/* <Button
                 colorScheme="green"
                 style={{marginTop: 15}}
                 onClick={() => {
@@ -109,7 +109,7 @@ const Login = () => {
                 width="100%"
             >
                 Guest Login
-            </Button>
+            </Button> */}
         </VStack>
         </div>
     )
