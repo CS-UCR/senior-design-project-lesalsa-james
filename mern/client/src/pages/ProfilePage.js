@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { useToast, Button, FormControl, FormLabel, Input, Container, Flex, VStack, Heading, Text, SimpleGrid, GridItem, Grid, Select } from '@chakra-ui/react';
+import { useToast, Button, FormControl, FormLabel, Input, Container, Flex, VStack, Heading, Text, SimpleGrid, GridItem, Grid, Select, Menu, MenuButton } from '@chakra-ui/react';
 import axios from 'axios';
-
+import {ArrowBackIcon} from "@chakra-ui/icons";
 
 
 const ProfilePage = () => {
@@ -15,7 +15,7 @@ const ProfilePage = () => {
     const [playstyle, setPlaystyle ] = useState();
     const [numPlayers, setNumPlayers ] = useState();
     const toast = useToast();
-
+    const history = useHistory();
     const updateUser = async () => {
         if (!email || !name || !password || !confirmPassword){
             toast({
@@ -68,14 +68,21 @@ const ProfilePage = () => {
     }
 
     return (
+        
     <Container maxW= "container.xl" p={0}>
         <Flex h="100vh" py={20}>
+      
+        <Button size = 'lg' colorScheme='teal' onClick={() => {history.push('/login')}}>
+        Back 
+        </Button>
+        
+        
             <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start" bg="white">
                 <VStack spacing={3} alignItems="flex-start">
                     <Heading size="2xl">Edit Profile</Heading>
                     {/* <Text>Hello...</Text> */}
                 </VStack>
-
+                
                 <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
                 <GridItem colSpan={2}>
                     <FormControl>

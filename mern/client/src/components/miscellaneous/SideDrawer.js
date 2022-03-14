@@ -140,6 +140,8 @@ const SideDrawer = () => {
           <Avatar size={"sm"} cursor={"pointer"} name={user.name} /*src={user.pic}*/ ></Avatar>
         </MenuButton>
         <MenuList>
+          <MenuItem onClick={() => {history.push('/FilterPage')}}>Filter Search</MenuItem>
+          <MenuDivider/>
           <MenuItem onClick={() => {history.push('/ProfilePage')}}>My Profile</MenuItem>
           <MenuDivider/>
           <MenuItem onClick={logoutHandler}>Log Out</MenuItem>
