@@ -71,13 +71,15 @@ Mocked up Profile
 Mocked up Chat Page
 ![Chat Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/LeSalsa%20Gamers_Chat.png)
 Current Home Page
-![Home Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/homepage.PNG)
+![Home Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/homePage.PNG)
 Current Edit Profile Page
-![Edit Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/edit%20profile%20page.PNG)
+![Edit Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/editProfilePage.PNG)
 Current Chat Page 
 ![Chat Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/chat%20page.PNG)
 Current Sign-Up/Login Page
 ![Sign up Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/sign%20up%20page.PNG)
+Current Filter Page
+![Filter Page](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/filterPage.PNG)
 
 
 Overall System Diagram
