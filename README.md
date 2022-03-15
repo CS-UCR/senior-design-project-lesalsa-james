@@ -13,6 +13,9 @@ Basically, we will be creating a web application that allows gamers (the main ty
 Though still subject to change, we are currently using technologies such as Javascript, HTML, CSS, Node.js, React.js, and Express.js to build our application. For our frontend, we are also using Chakra UI, a React Component to help us style our webpages. Last quarter we were using PSQL but have made the switch over to MongoDB this quarter.
 	Our project is important in allowing users and gamers to be able to connect with each other. We feel that the quality of games is often affected by teammates, and the ability to find teammates before queuing up in a game can overall help benefit the quality of games. In addition, our project will allow people looking for friends or others with similar interests, and be able to connect through the online community.
 
+## Website
+Here is the link to our website:
+https://legamersonly.herokuapp.com/
 
 ## Team
 [Alex Chen](https://github.com/achen163)
@@ -101,11 +104,20 @@ Overall System Diagram
 
 7. Worked on Creating a Chat, and Creating a Group Chat.
 
-## Future Plans 
-1. Currently finishing up our connection of backend and frontend for our chatting.
+8. Group chat functionalities if admin: Can change group chat name, can kick a user out, can add more users to the group, and can also leave the group. 
 	
-2. We will be working on allowing users to edit other parts of their profile as well. 
+9. Live chatting. Users will get messages live and there is also a typing animation if a user is typing to another
 	
-3. Additionally, we also plan to add the filtering and friends feature which allows users to friend other individuals and chat with those friended individuals.
+10. Notifications if both users are on
 	
-5. Testing and deployment will also be a focus on towards the end of the quarter. We plan to test everything to make sure that our web application is running smoothly and we are thinking of deploying our application using Heroku. 
+11. Updated home page
+	
+12. Filtering page and filtering system
+
+## Deferred Plans 
+1. One thing we deferred was the ability to add friends, and making a friends list. We wanted to focus on the other components that we felt like would have more of an impact on the project.
+	
+2. Integrating TravisCI and using continuous integration. We began looking into it, but ended up running out of time and decided to just focus on deploying with Heroku.
+	
+## Bugs
+1. One bug that we notice is on the chat page, when first logging in the screen doesn't fetch it correctly unless we refresh the page. Also sometimes going back to the chat page from the edit profile or filter system page leads to a white page. The problem can be fixed by refreshing the page, and the chat page should then display correctly
