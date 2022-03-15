@@ -40,7 +40,7 @@ Demo: <Link to youtube video>
 	
 4. Command line: npm install (installing dependency) 
 	
-5. Make a .env file with the contents:
+5. Make a .env file with the contents within mern/server:
  
 	PORT=5000
 	MONGO_URI=mongodb+srv://gamersonly:lesalsajames@cluster0.iirer.mongodb.net/Gamersonly?retryWrites=true&w=majority
@@ -86,7 +86,7 @@ Current Filter Page
 
 
 Overall System Diagram
-![Overall System Diagram](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/System%20Diagram.jpg) 
+![Overall System Diagram](https://github.com/CS-UCR/senior-design-project-lesalsa-james/blob/main/images/System%20Diagram) 
 
 	
 ## Accomplished Tasks
